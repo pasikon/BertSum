@@ -94,10 +94,18 @@ python train.py -mode train -encoder rnn -dropout 0.1 -bert_data_path ../bert_da
 
 ## Model Evaluation
 After the training finished, run
+
 ```
+pyrouge_set_rouge_path ~/dev/xoxo/rouge/tools/ROUGE-1.5.5/
 python train.py -mode validate -bert_data_path ../bert_data/cnndm -model_path MODEL_PATH  -visible_gpus 0  -gpu_ranks 0 -batch_size 30000  -log_file LOG_FILE  -result_path RESULT_PATH -test_all -block_trigram true
 ```
 * `MODEL_PATH` is the directory of saved checkpoints
 * `RESULT_PATH` is where you want to put decoded summaries (default `../results/cnndm`)
+
+For example:
+
+```shell script
+python train.py -mode validate -bert_data_path ../bert_data/cnndm -model_path ../models/bert_transformer -visible_gpus 0  -gpu_ranks 0 -batch_size 30000  -log_file ../logs/bert_transformer_validation.log  -result_path ../results/bert_transformer -test_all -block_trigram true
+```
 
 
