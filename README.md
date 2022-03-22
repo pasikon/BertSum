@@ -15,9 +15,23 @@ Results on CNN/Dailymail (25/3/2019):
 | BERTSUM+Transformer     | 43.25      | 20.24    |39.63     |
 | BERTSUM+LSTM     | 43.22       |  20.17    |39.59      |
 
+## Environment preparation
+
 **Python version**: This code is in Python3.6
 
-**Package Requirements**: pytorch pytorch_pretrained_bert tensorboardX multiprocess pyrouge
+**Package Requirements**: pytorch 1.5.0 (CUDA 10.2) pytorch_pretrained_bert tensorboardX multiprocess pyrouge
+
+Creating working env:
+
+```shell
+conda create --name myenv --file spec-file.txt
+```
+
+For reference, installing pytorch:
+
+```shell
+conda install pytorch==1.5.0 torchvision==0.6.0 cudatoolkit=10.2 -c pytorch
+```
 
 Some codes are borrowed from ONMT(https://github.com/OpenNMT/OpenNMT-py)
 
